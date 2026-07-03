@@ -69,12 +69,7 @@ plain = bytes(c ^ key[i % len(key)] for i, c in enumerate(cipher))
 print(plain.decode())
 Flag
 Plaintext
+
+
 picoCTF{r0gu3_c3ll_t0w3r_a7310be3}
 
-#### 💾 طريقة الحفظ والخروج من Nano:
-1. اضغطي على زر الاختصار **`Ctrl + O`** ثم اضغطي **`Enter`** لتأكيد الحفظ.
-2. اضغطي على زر الاختصار **`Ctrl + X`** للعودة إلى شاشة التيرمينال الرئيسية.
-
----
-
-أخبريني بمجرد خروجكِ من ملف النانو لننتقل معاً إلى الجزء الأخير وهو الـ Git والرفع 
