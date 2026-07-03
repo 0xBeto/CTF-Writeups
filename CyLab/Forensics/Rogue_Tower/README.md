@@ -1,4 +1,3 @@
-Markdown
 # CyLab Security Academy - Rogue Tower Writeup
 *(Challenge Platform: CyLab Security Academy)*
 
@@ -19,6 +18,7 @@ We started by verifying the general details of `rogue_tower.pcap`. Running basic
 Following the clues, we filtered the HTTP traffic to inspect the `User-Agent` configurations:
 ```bash
 tshark -r rogue_tower.pcap -Y "http.request" -T fields -e http.user_agent
+
 Result:
 
 Plaintext
@@ -43,6 +43,7 @@ Plaintext
 455141424762566b46
 437755485556454252
 513d3d
+
 4. Reconstructing the Payload
 Combining the hex strings and converting them back into raw data revealed a Base64 encoded payload:
 
@@ -68,8 +69,6 @@ key = b"28284734"
 plain = bytes(c ^ key[i % len(key)] for i, c in enumerate(cipher))
 print(plain.decode())
 Flag
+
 Plaintext
-
-
 picoCTF{r0gu3_c3ll_t0w3r_a7310be3}
-
